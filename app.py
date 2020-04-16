@@ -34,14 +34,14 @@ def predict():
         #columns  -- Age,	Fever,	BodyPains,	RunnyNose,	Difficulty_in_Breath
         data = [[int(age),int(fever),int(body),int(cold),int(breath)]]
         predict = clf.predict(data)[0]
-        proba_score = clf.predict_proba(data)[0][0]
+        
         
         if predict==1:
             prediction='Positive'
         else:
             prediction = 'Negative'
         
-        return render_template('index.html',prediction=prediction,proba_score=round(proba_score*100,2))
+        return render_template('index.html',prediction=prediction,proba_score=round(predict*100,2))
     else:
         
         return render_template('index.html',message='Something missed, Please follow the instructions..!')
