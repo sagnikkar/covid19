@@ -34,7 +34,7 @@ def predict():
         #columns  -- Age,	Fever,	BodyPains,	RunnyNose,	Difficulty_in_Breath
         data = [[int(age),int(fever),int(body),int(cold),int(breath)]]
         predict = clf.predict(data)[0]
-        proba_score = clf.predict_proba(data)[0][1]
+        proba_score = clf.predict_proba(data)[0][1][2][3][4]
         
         if predict==1:
             prediction='Positive'
