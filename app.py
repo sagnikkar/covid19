@@ -37,9 +37,9 @@ def predict():
         proba_score = clf.predict_proba(data)[0][1]
         
         if predict==1:
-            prediction='Positive-Inform the Authorities about your condition.'
+            prediction='Positive - Inform the Authorities about your condition.'
         else:
-            prediction = 'Negative-Stay at Home and observe your health.'
+            prediction = 'Negative - Stay at Home and observe your health.'
         
         return render_template('index.html',prediction=prediction,proba_score=round(proba_score*100,2))
     else:
