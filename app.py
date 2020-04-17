@@ -33,7 +33,7 @@ def predict():
         clf = pickle.load(open("corona.pkl", "rb"))
         #columns  -- Age,	Fever,	BodyPains,	RunnyNose,	Difficulty_in_Breath
         data = [[int(age),int(fever),int(body),int(cold),int(breath)]]
-        predict = clf.predict(data)[0]
+        predict = clf.predict(data)[0][1][2][3][4]
         proba_score = clf.predict_proba(data)[0][1][2][3][4]
         
         if predict==1:
