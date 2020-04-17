@@ -36,7 +36,7 @@ def predict():
         predict = clf.predict(data)[0]
         proba_score = clf.predict_proba(data)[0][1][2][3][4]
         
-        if predict >= 0.5:
+        if predict==1:
             prediction='Positive'
         else:
             prediction = 'Negative'
